@@ -5,6 +5,7 @@ $pass = "";     // senha marota
 $db   = "cadastro";
 
 // Criando conexão
+$host = "127.0.0.1:4444";
 $conn = new mysqli($host, $user, $pass, $db);
 
 // Tratando a conexã o
