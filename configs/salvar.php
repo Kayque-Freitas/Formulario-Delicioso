@@ -9,13 +9,13 @@ $email = $_POST['email'];
 $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT); //
 $sexo  = $_POST['sexo'];
 
-$avatarNome  = $_FILES['avatar']['name'];
-$avatarTmp   = $_FILES['avatar']['tmp_name'];
-$avatarTipo  = $_FILES['avatar']['type'];
-
+$avatar  = $_FILES['avatar']['name'];
 $caminho = "uploads/". basename($avatarNome);
 
-if ()move_uploaded_file($avatarTmp, $caminho)) {
+$ext = strtolower(pathinfo($avatar, PATHINFO_EXTENSION));
+$avatarf = $rm . '.' . $ext;
+
+if (move_uploaded_file($_FILES['avatar']['tmp_name'], $)) {
     echo "Upload feito com sucesso";
 } else {
     die("Falha ao enviar arquivo");
