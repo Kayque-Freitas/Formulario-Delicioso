@@ -1,7 +1,7 @@
-CREATE DATABASE IF NOT EXISTS `noite`;
-USE `noite`;
 
-CREATE TABLE IF NOT EXISTS `aluno` (
+USE `cadastro`;
+
+CREATE TABLE IF NOT EXISTS `alunos` (
   `id` int NOT NULL,
   `rm` int DEFAULT NULL,
   `nome` varchar(50) DEFAULT NULL,

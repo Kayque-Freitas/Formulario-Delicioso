@@ -1,8 +1,8 @@
 <?php
-$host = "127.0.0.1:3306";
+$host = "127.0.0.1:4444";
 $user = "root"; // usuário padrão do Laragon
 $pass = "";     // senha marota
-$db   = "noite";
+$db   = "cadastro"; // nome do banco de dados
 
 // Criando conexão
 $conn = new mysqli($host, $user, $pass, $db);
