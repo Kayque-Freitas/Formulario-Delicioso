@@ -1,12 +1,13 @@
 <?php
-$host = "localhost";
+$host = "127.0.0.1:3306";
 $user = "root"; // usuário padrão do Laragon
 $pass = "";     // senha marota
-$db   = "cadastro";
+$db   = "noite";
 
 // Criando conexão
-$host = "127.0.0.1:4444";
 $conn = new mysqli($host, $user, $pass, $db);
+
+date_default_timezone_set("America/Sao_Paulo");
 
 // Tratando a conexã o
 if ($conn->connect_error) {

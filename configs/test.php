@@ -1,7 +1,7 @@
 <?php
 include 'conn.php';
 
-$sql = "SELECT * FROM usuarios";
+$sql = "SELECT * FROM aluno";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
