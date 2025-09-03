@@ -1,5 +1,5 @@
 <?php
-$host = "127.0.0.1:4444";
+$host = "127.0.0.1:3306";
 $user = "root"; // usuário padrão do Laragon
 $pass = "";     // senha marota
 $db   = "cadastro"; // nome do banco de dados

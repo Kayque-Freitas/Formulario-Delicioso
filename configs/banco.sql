@@ -1,6 +1,6 @@
+CREATE DATABASE cadastro
 
-USE `cadastro`;
-
+USE cadastro;
 CREATE TABLE IF NOT EXISTS `alunos` (
   `id` int NOT NULL,
   `rm` int DEFAULT NULL,
