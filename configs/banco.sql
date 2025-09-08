@@ -1,8 +1,9 @@
-CREATE DATABASE cadastro
+CREATE DATABASE kayqueFreitas
 
-USE cadastro;
+USE kayqueFreitas;
+
 CREATE TABLE IF NOT EXISTS `alunos` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `rm` int DEFAULT NULL,
   `nome` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,

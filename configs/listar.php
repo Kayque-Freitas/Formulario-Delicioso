@@ -44,7 +44,7 @@
 <td>$senha</td>
 <td>$sexo</td>
 <td><a href='#'>Editar</a></td>
-<td><a href='#'>Excluir</a></td
+<td><a href=''>Excluir</a></td
 </tr>";
         }
         ?>
