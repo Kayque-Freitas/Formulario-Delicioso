@@ -19,13 +19,19 @@ $avatarf = $rm . '.' . $ext;
 $avatarbd = $caminho . $avatarf;
 
 
-$sql = "SELECT * FROM alunos WHERE rm = '$rm' OR email = '$email'";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    
-    header("Location: ../forms.html?erro=1");
-    exit();
+$sql = "SELECT * FROM alunos WHERE rm = '$rm'";
+$resultRm = $conn->query($sql);
+if ($resultRm->num_rows > 0){
+    echo 'RM em uso!<br>';
 }
+
+$sql = "SELECT * FROM alunos WHERE email = '$email'";
+$resultEmail = $conn->query($sql);
+if ($resultEmail->num_rows > 0){
+    echo 'Email em uso!';
+}
+else{
+    
 
 if (move_uploaded_file($_FILES['avatar']['tmp_name'], $voltar . $caminho . $avatarf)) {
 } else {
@@ -33,7 +39,8 @@ if (move_uploaded_file($_FILES['avatar']['tmp_name'], $voltar . $caminho . $avat
 }
 
 $conn->query("INSERT INTO alunos (rm, nome, email, senha, avatar, sexo) VALUES ('$rm','$nome','$email','$senha','$avatarbd','$sexo')");
-
+header("refresh: 3; URL=../forms.html");
+}
 echo '<html lang="pt-br">';
 echo '<head>';
 echo '<meta charset="UTF-8">';
@@ -49,7 +56,7 @@ echo '<div class="card-body">';
 echo "<p><strong>RM:</strong> $rm</p>";
 echo "<p><strong>Nome:</strong> $nome</p>";
 echo "<p><strong>Email:</strong> $email</p>";
-echo "<p><strong>Senha criptografada:</strong> $senha</p>";
+echo "<p><strong>Senha marota:</strong> $senha</p>";
 echo "<p><strong>Sexo:</strong> $sexo</p>";
 echo "<p><strong>Avatar:</strong> $avatarf</p>";
 echo "<img src='../upload/$avatarf' class='img-thumbnail mt-3' style='max-width:150px;' alt='Avatar'>";
